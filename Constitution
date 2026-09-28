@@ -1,0 +1,75 @@
+Contitution and Specs:
+
+The Concept: A web app where users can log their daily media consumption (a book, a song, or a video game they checked out) 
+alongside a chosen color palette or mood tag that represents their "vibe" for the day. Users can view a clean dashboard 
+history of their past logs.
+
+1. Objective
+
+  To provide a lightweight, aesthetically pleasing digital journal where users can quickly log their daily media consumption 
+  and emotional "vibe", helping them visualize patterns in their moods and media habits over time.
+
+2. Behavior
+
+  User Authentication: Users can securely log in or sign up for a personal account.
+
+  Daily Log Creation: Users can submit a new entry consisting of a date, a media title, a category (book, music, game, movie), 
+  a rating, and a primary vibe/mood tag.
+
+  Data Visualization & Dashboard: The home screen displays a chronological feed of past entries and a simple summary chart showing 
+  the distribution of logged moods or media categories.
+
+3. Constraints
+
+  The application must load and render responsive UI components on both desktop and mobile viewports.
+
+  Data persistence must be handled via a relational database backend.
+
+  Form inputs must validate against empty submissions or future dates.
+
+
+4. Verification
+
+  Test Case 1 (Creation): Submit a valid daily log entry and verify that it immediately appears in the 
+  user's history feed and updates the dashboard metrics.
+
+  Test Case 2 (Validation): Attempt to submit a log with missing required fields and verify that appropriate error 
+  messages are displayed.
+
+  Test Case 3 (Responsiveness): Resize the browser window from desktop to mobile dimensions to confirm that layout 
+  elements stack correctly without horizontal overflow.
+
+
+UI Mockup:
++-----------------------------------------------------------------------+
+|  VibeCheck                           [+] New Entry    [👤 Profile]    |
++-----------------------------------------------------------------------+
+|                                                                       |
+|  ## Your Weekly Vibe & Media Dashboard                                |
+|                                                                       |
+|  +------------------------+  +-------------------------------------+  |
+|  | Top Category This Week |  | Mood Distribution                   |  |
+|  |                        |  |                                     |  |
+|  |   🎮 Video Games (55%) |  |  😊 Chill: 40%                      |  |
+|  |   📚 Books (30%)       |  |  🚀 Focused: 40%                    |  |
+|  |   🎵 Music (15%)       |  |  ☕ Cozy: 20%                       |  |
+|  +------------------------+  +-------------------------------------+  |
+|                                                                       |
+|  -------------------------------------------------------------------  |
+|                                                                       |
+|  ## Recent Logs                                                       |
+|                                                                       |
+|  +-----------------------------------------------------------------+  |
+|  | September 22, 2026                                              |  |
+|  | Title: Hades II                                                 |  |
+|  | Category: [Video Game]   Rating: ⭐⭐⭐⭐⭐                       |  |
+|  | Vibe: 🚀 Focused                                                |  |
+|  +-----------------------------------------------------------------+  |
+|  +-----------------------------------------------------------------+  |
+|  | September 21, 2026                                              |  |
+|  | Title: Dune Messiah                                             |  |
+|  | Category: [Book]         Rating: ⭐⭐⭐⭐                         |  |
+|  | Vibe: ☕ Cozy                                                   |  |
+|  +-----------------------------------------------------------------+  |
+|                                                                       |
++-----------------------------------------------------------------------+
