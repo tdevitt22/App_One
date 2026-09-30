@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VibeCheck</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div class="brand-wrap">
+          <div class="brand-mark">V</div>
+          <div>
+            <div class="brand-name">VibeCheck</div>
+          </div>
+        </div>
+        <nav class="top-actions">
+          <button id="new-entry-button" class="primary-button hidden">+ New Entry</button>
+          <button id="profile-button" class="secondary-button hidden">Profile</button>
+          <button id="logout-button" class="secondary-button hidden">Log out</button>
+        </nav>
+      </header>
+
+      <main class="content">
+        <section id="auth-section" class="card auth-card">
+          <div class="auth-panel">
+            <div class="auth-copy">
+              <p class="eyebrow">Daily media journal</p>
+              <h1>Your weekly vibe & media dashboard</h1>
+              <p>
+                Track what you read, listened to, or played, and pair it with the mood that defined your day.
+              </p>
+            </div>
+
+            <div class="auth-form-box">
+              <div class="tabs">
+                <button class="tab active" data-tab="login">Login</button>
+                <button class="tab" data-tab="signup">Sign Up</button>
+              </div>
+
+              <form id="login-form" class="auth-form active-form">
+                <label>
+                  Email
+                  <input type="email" name="email" placeholder="you@example.com" required />
+                </label>
+                <label>
+                  Password
+                  <input type="password" name="password" placeholder="••••••••" required />
+                </label>
+                <button type="submit" class="primary-button wide">Log in</button>
+              </form>
+
+              <form id="signup-form" class="auth-form">
+                <label>
+                  Name
+                  <input type="text" name="name" placeholder="Your name" required />
+                </label>
+                <label>
+                  Email
+                  <input type="email" name="email" placeholder="you@example.com" required />
+                </label>
+                <label>
+                  Password
+                  <input type="password" name="password" placeholder="At least 6 characters" required />
+                </label>
+                <button type="submit" class="primary-button wide">Create account</button>
+              </form>
+
+              <p id="auth-message" class="form-message"></p>
+            </div>
+          </div>
+        </section>
+
+        <section id="dashboard-section" class="dashboard hidden">
+          <div class="welcome-row">
+            <div>
+              <p class="eyebrow">Overview</p>
+              <h2 id="welcome-name">Your dashboard</h2>
+            </div>
+            <div class="summary-pill" id="summary-pill">0 entries</div>
+          </div>
+
+          <div class="stats-grid">
+            <article class="stat-card">
+              <h3>Top Category</h3>
+              <p id="top-category">—</p>
+            </article>
+            <article class="stat-card">
+              <h3>Average Rating</h3>
+              <p id="average-rating">—</p>
+            </article>
+            <article class="stat-card">
+              <h3>Total Entries</h3>
+              <p id="total-entries">0</p>
+            </article>
+          </div>
+
+          <div class="panel-grid">
+            <article class="panel-card">
+              <h3>Category Breakdown</h3>
+              <div id="category-breakdown" class="legend-list"></div>
+            </article>
+            <article class="panel-card">
+              <h3>Vibe Distribution</h3>
+              <div id="vibe-breakdown" class="legend-list"></div>
+            </article>
+          </div>
+
+          <article class="panel-card entry-panel">
+            <div class="section-header">
+              <h3>Recent Logs</h3>
+              <button id="toggle-form-button" class="primary-button small">Add a new log</button>
+            </div>
+
+            <form id="entry-form" class="entry-form hidden">
+              <div class="field-row">
+                <label>
+                  Date
+                  <input type="date" name="date" required />
+                </label>
+                <label>
+                  Title
+                  <input type="text" name="title" placeholder="Hades II" required />
+                </label>
+              </div>
+
+              <div class="field-row">
+                <label>
+                  Category
+                  <select name="category" required>
+                    <option value="">Select</option>
+                    <option value="Book">Book</option>
+                    <option value="Music">Music</option>
+                    <option value="Game">Game</option>
+                    <option value="Movie">Movie</option>
+                  </select>
+                </label>
+                <label>
+                  Rating
+                  <select name="rating" required>
+                    <option value="">Select</option>
+                    <option value="1">1 star</option>
+                    <option value="2">2 stars</option>
+                    <option value="3">3 stars</option>
+                    <option value="4">4 stars</option>
+                    <option value="5">5 stars</option>
+                  </select>
+                </label>
+                <label>
+                  Vibe
+                  <select name="vibe" required>
+                    <option value="">Select</option>
+                    <option value="Chill">Chill</option>
+                    <option value="Focused">Focused</option>
+                    <option value="Cozy">Cozy</option>
+                    <option value="Energetic">Energetic</option>
+                    <option value="Happy">Happy</option>
+                    <option value="Reflective">Reflective</option>
+                  </select>
+                </label>
+              </div>
+
+              <div class="entry-actions">
+                <button type="submit" class="primary-button">Save entry</button>
+                <button type="button" id="cancel-entry" class="secondary-button">Cancel</button>
+              </div>
+              <p id="entry-message" class="form-message"></p>
+            </form>
+
+            <div id="entries-list" class="entries-list"></div>
+          </article>
+        </section>
+      </main>
+    </div>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
