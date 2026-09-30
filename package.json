@@ -8,8 +8,8 @@
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
-    "better-sqlite3": "^11.7.0",
-    "express": "^4.19.2",
-    "express-session": "^1.20.0"
+    "better-sqlite3": "^9.2.2",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3"
   }
 }
